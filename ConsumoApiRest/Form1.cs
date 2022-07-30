@@ -104,6 +104,19 @@ namespace ConsumoApiRest
             {
                 MessageBox.Show("Nombre o Telefono Vacio");
             }
+            BtnEditar.Visible = true;
+            BtnGuardar.Visible = false;
+            BtnNuevo.Visible = true;
+            BtnCancelar.Visible = false;
+            TxtNombre.Visible = false;
+            TxtTel.Visible = false;
+            TxtID.Visible = true;
+            label1.Visible = true;
+            label2.Visible = false;
+            label3.Visible = false;
+            TxtID.Clear();
+            TxtTel.Clear();
+            TxtNombre.Clear();
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
