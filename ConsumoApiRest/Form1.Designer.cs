@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TxtID = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.TxtTel = new System.Windows.Forms.TextBox();
+            this.DGVPersonas = new System.Windows.Forms.DataGridView();
+            this.BtnNuevo = new System.Windows.Forms.Button();
+            this.BtnBorrar = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPersonas)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtID
@@ -54,12 +54,13 @@
             this.TxtID.Size = new System.Drawing.Size(115, 20);
             this.TxtID.TabIndex = 0;
             // 
-            // textBox2
+            // TxtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(357, 20);
-            this.textBox2.TabIndex = 1;
+            this.TxtNombre.Location = new System.Drawing.Point(53, 35);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(277, 20);
+            this.TxtNombre.TabIndex = 1;
+            this.TxtNombre.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -89,6 +90,7 @@
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -101,67 +103,66 @@
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Celular";
+            this.label3.Visible = false;
             // 
-            // textBox3
+            // TxtTel
             // 
-            this.textBox3.Location = new System.Drawing.Point(53, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(115, 20);
-            this.textBox3.TabIndex = 5;
+            this.TxtTel.Location = new System.Drawing.Point(53, 61);
+            this.TxtTel.Name = "TxtTel";
+            this.TxtTel.Size = new System.Drawing.Size(115, 20);
+            this.TxtTel.TabIndex = 5;
+            this.TxtTel.Visible = false;
             // 
-            // dataGridView1
+            // DGVPersonas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(399, 180);
-            this.dataGridView1.TabIndex = 7;
+            this.DGVPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVPersonas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.DGVPersonas.Location = new System.Drawing.Point(8, 88);
+            this.DGVPersonas.Name = "DGVPersonas";
+            this.DGVPersonas.Size = new System.Drawing.Size(404, 143);
+            this.DGVPersonas.TabIndex = 7;
             // 
-            // button1
+            // BtnNuevo
             // 
-            this.button1.Location = new System.Drawing.Point(11, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnNuevo.Location = new System.Drawing.Point(12, 235);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.BtnNuevo.TabIndex = 8;
+            this.BtnNuevo.Text = "Nuevo";
+            this.BtnNuevo.UseVisualStyleBackColor = true;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
-            // button2
+            // BtnBorrar
             // 
-            this.button2.Location = new System.Drawing.Point(335, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnBorrar.Location = new System.Drawing.Point(255, 235);
+            this.BtnBorrar.Name = "BtnBorrar";
+            this.BtnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBorrar.TabIndex = 9;
+            this.BtnBorrar.Text = "Borrar";
+            this.BtnBorrar.UseVisualStyleBackColor = true;
+            this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
             // 
-            // button3
+            // BtnEditar
             // 
-            this.button3.Location = new System.Drawing.Point(254, 275);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnEditar.Location = new System.Drawing.Point(174, 235);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEditar.TabIndex = 10;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
-            // button4
+            // BtnGuardar
             // 
-            this.button4.Location = new System.Drawing.Point(173, 275);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(92, 275);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Guardar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Location = new System.Drawing.Point(93, 235);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BtnGuardar.TabIndex = 12;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Visible = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnBuscar
             // 
@@ -174,29 +175,41 @@
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.Location = new System.Drawing.Point(337, 235);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 14;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Visible = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(420, 306);
+            this.ClientSize = new System.Drawing.Size(420, 263);
+            this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.BtnGuardar);
+            this.Controls.Add(this.BtnEditar);
+            this.Controls.Add(this.BtnBorrar);
+            this.Controls.Add(this.BtnNuevo);
+            this.Controls.Add(this.DGVPersonas);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TxtTel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.TxtID);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPersonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,19 +218,19 @@
         #endregion
 
         private System.Windows.Forms.TextBox TxtID;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox TxtTel;
+        private System.Windows.Forms.DataGridView DGVPersonas;
+        private System.Windows.Forms.Button BtnNuevo;
+        private System.Windows.Forms.Button BtnBorrar;
+        private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.Button BtnCancelar;
     }
 }
 
