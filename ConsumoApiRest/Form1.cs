@@ -42,7 +42,7 @@ namespace ConsumoApiRest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:5000/Persona");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://andresoft.atwebpages.com/verConsulta.php");
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
             if (resp.StatusCode == HttpStatusCode.OK)
             {
